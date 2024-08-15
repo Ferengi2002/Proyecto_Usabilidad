@@ -49,8 +49,12 @@ const Roulette = ({ onClose }) => {
     }
 
     setResultado(casillas);
-    onClose(casillas);
   }, [rotation, onClose]); // Añadir 'onClose' como dependencia porque se está utilizando dentro del efecto.
+
+  const handleResultClick = () => {
+    onClose(resultado); // Pasar el resultado solo cuando se hace clic en el botón
+  };
+
 
   useEffect(() => {
     if (!isSpinning && showResult) {
@@ -81,7 +85,7 @@ const Roulette = ({ onClose }) => {
       </div>
       <div className='resultado-container' style={{ minHeight: '50px' }} tabindex="0">
         {showResult ? (
-          <button className='resultado-button' onClick={() => onClose(resultado)} tabindex="0">
+          <button className='resultado-button' onClick={handleResultClick} tabindex="0">
             {resultado !== '' && `Avanza ${resultado} casillas`}
           </button>
         ) : (
