@@ -1,0 +1,83 @@
+Pregunta: Dos automóviles salen al mismo tiempo de dos ciudades, A y B, separadas por una distancia de 192 km. El primer automóvil sale de A hacia B a 75 km/h. El segundo sale de B hacia A a 85 km/h. Calcula el instante en el que se encuentran
+A) Se encuentran en 2 horas
+B) Se encuentran en 1 hora
+C) Se encuentran en 1.2 horas
+D) Se encuentran en 2.4 horas
+Respuesta C) Se encuentran en 1.2 horas
+
+Pregunta: ¿Qué es el Movimiento Rectilíneo Uniforme (MRU)?
+A) Un movimiento en el que la velocidad cambia con el tiempo.
+B) Un movimiento en el que la aceleración es constante diferente de 0.
+C) Un movimiento en el que un objeto se mueve en un círculo.
+D) Un movimiento en el que un objeto se desplaza en línea recta a velocidad constante.
+Respuesta D) Un movimiento en el que un objeto se desplaza en línea recta a velocidad constante.
+
+Pregunta: ¿Qué es el Movimiento Rectilíneo Uniformemente Variado (MRUV)?
+A) Un movimiento en el que la aceleración es constante y la velocidad cambia con el tiempo.
+B) Un movimiento en el que la aceleración varía.
+C) Un movimiento en el que la velocidad es constante.
+D) Un movimiento en el que la posición no cambia.
+Respuesta A) Un movimiento en el que la aceleración es constante y la velocidad cambia con el tiempo.
+
+Pregunta: Un motociclista parte del reposo y con aceleración constante de 3 m/s² recorre un tramo recto de 150 m. ¿Cuál es su rapidez al final del camino y cuánto tiempo emplea en recorrerlo?
+A) Vf = 20m/s ; t = 13 segundos
+B) Vf = 30m/s ; t = 10 segundos
+C) Vf = 20m/s ; t = 10 segundos
+D) Vf = 30m/s ; t = 13 segundos
+Respuesta B) Vf = 30m/s ; t = 10 segundos
+
+Pregunta: Un coche acelera uniformemente desde el reposo hasta alcanzar una velocidad de 20 m/s en 10 segundos. ¿Cuál es la aceleración del coche?
+A) 1 m/s²
+B) 2 m/s²
+C) 0.5 m/s²
+D) 4 m/s²
+Respuesta B) 2 m/s²
+
+Pregunta: Una persona corre a una velocidad constante de 6 m/s, calcular el tiempo que tardará en recorrer 350 cm
+A) 0.58 segundos
+B) 0.6 segundos
+C) 1 segundo
+D) 0.47 segundos
+Respuesta A) 0.58 segundos
+
+Pregunta: Explica en qué consiste el movimiento parabólico.
+A) Un movimiento en línea recta con velocidad constante.
+B) Un movimiento en círculo con aceleración centrípeta.
+C) Un movimiento en el que un objeto sigue una trayectoria curva bajo la influencia de la gravedad.
+D) Un movimiento en el que un objeto se desplaza en línea recta con aceleración constante.
+Respuesta C) Un movimiento en el que un objeto sigue una trayectoria curva bajo la influencia de la gravedad.
+
+Pregunta: Un tren se mueve con una velocidad constante de 90 km/h. ¿Cuánto tiempo tardará en recorrer una distancia de 180 km?
+A) 1 hora
+B) 2 horas
+C) 3 horas
+D) 4 horas
+Respuesta B) 2 horas
+
+Pregunta: Un objeto cae libremente desde una altura de 80 metros. ¿Cuánto tiempo tarda en llegar al suelo? (Usa g = 9,8 m/s²)
+A) 4 segundos
+B) 5 segundos
+C) 6 segundos
+D) 8 segundos
+Respuesta A) 4 segundos
+
+Pregunta: Un ciclista se desplaza a una velocidad constante de 15 m/s. ¿Qué distancia recorrerá en 10 minutos?
+A) 9 km
+B) 7.5 km
+C) 8.5 km
+D) 6 km
+Respuesta A) 9 km
+
+Pregunta: ¿Qué es la velocidad?
+A) La cantidad de espacio recorrido por un objeto en un tiempo determinado.
+B) La rapidez de un objeto en una dirección específica.
+C) La tasa de cambio de posición con respecto al tiempo.
+D) Todas las anteriores.
+Respuesta D) Todas las anteriores.
+
+Pregunta: ¿Qué es la aceleración?
+A) El cambio en la dirección de un objeto.
+B) La velocidad de un objeto al cuadrado.
+C) La tasa de cambio de la velocidad con respecto al tiempo.
+D) La distancia recorrida en línea recta.
+Respuesta C) La tasa de cambio de la velocidad con respecto al tiempo.
