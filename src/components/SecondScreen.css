@@ -1,42 +1,46 @@
 .second-screen {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
-  }
-  
-  .game-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Opcional: ajusta el ancho según lo necesites */
-  }
-  
-  .game-section {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
+  height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+  overflow-y: auto; /* Permite el scroll vertical si el contenido es más alto que la ventana */
+  padding: 20px; /* Espacio alrededor del contenido */
+}
+
+.game-section {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 1200px; /* Opcional: ajusta el ancho máximo según sea necesario */
+  margin-bottom: 20px; /* Espacio entre componentes */
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
 }
 
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Asegura que esté sobre el tablero */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté sobre el tablero */
 }
 
 .modal-content {
-    
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    width: 80%; /* Ajusta según sea necesario */
-    max-width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  width: 80%; /* Ajusta según sea necesario */
+  max-width: 600px;
+}
+
+.instructions {
+  margin-top: 20px; /* Espacio entre el tablero de juego y las instrucciones */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 1200px; /* Opcional: ajusta el ancho máximo según sea necesario */
 }

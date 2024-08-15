@@ -54,7 +54,9 @@ const SecondScreen = () => {
         // Aquí puedes agregar lógica para mostrar un mensaje de game over
         // o navegar a otro componente
         showRouletteAgain();
-    };*/
+    };
+    
+    */
 
     return (
         <div>

@@ -127,6 +127,7 @@ footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   bottom: 0;
+  z-index: 1000; /* Asegura que esté sobre el tablero */
 }
 
 footer p {
