@@ -70,9 +70,8 @@ const SecondScreen = () => {
                 </div>
                 {showRoulette && <Roulette onClose={handleRouletteClose} />}
                 {showQuestion && <Question                 
-                onResult={handleQuestionResult} />}
+                onAnswered={handleQuestionResult} />}
 
-                
             </div>
             </div>
             {/* {showRoulette && <Roulette onClose={handleClose} />} */}

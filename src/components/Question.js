@@ -32,32 +32,32 @@ const Question = ({ onAnswered }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/questions.txt')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(text => {
-            const parsedQuestions = parseQuestions(text);
-            const randomQuestion = parsedQuestions[Math.floor(Math.random() * parsedQuestions.length)];
-            setQuestion(randomQuestion);
-        })
-        .catch(error => {
-            console.error('Error cargando el archivo:', error);
-            setError('Error cargando las preguntas. Por favor intenta de nuevo más tarde.');
-        });
+    fetch(`${process.env.PUBLIC_URL}/questions.txt`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(text => {
+        const parsedQuestions = parseQuestions(text);
+        const randomQuestion = parsedQuestions[Math.floor(Math.random() * parsedQuestions.length)];
+        setQuestion(randomQuestion);
+      })
+      .catch(error => {
+        console.error('Error cargando el archivo:', error);
+        setError('Error cargando las preguntas. Por favor intenta de nuevo más tarde.');
+      });
   }, []);
-
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     const correct = option === question.correctOption;
     setIsAnswerCorrect(correct);
-    onAnswered(correct); // Asegúrate de llamar a la función onAnswered con true o false
+   
   };
 
   const handleOkClick = () => {
+    onAnswered(isAnswerCorrect); // Asegúrate de llamar a la función onAnswered con true o false
     setSelectedOption(null);
     setIsAnswerCorrect(null);
   };
