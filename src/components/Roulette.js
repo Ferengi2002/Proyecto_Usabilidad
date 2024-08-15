@@ -59,43 +59,45 @@ const Roulette = ({ onClose }) => {
   }, [isSpinning, showResult, final]);
 
   return (
-    <div className='modal-overlay'>
-      <div className='modal-content'>
-        <div className='plafon'>
-          <div className='close-button-container'> 
-            <button 
-              className='close-button' 
-              onClick={() => onClose(resultado)} 
-              disabled={isSpinning || !showResult}
-            >
-              <img src={closeImage} alt="Cerrar" />
+    <div className='modal-overlay' tabindex="0">
+  <div className='modal-content' tabindex="0">
+    <div className='plafon' tabindex="0">
+      <div className='close-button-container' tabindex="0"> 
+        <button 
+          className='close-button' 
+          onClick={() => onClose(resultado)} 
+          disabled={isSpinning || !showResult}
+          tabindex="0"
+        >
+          <img src={closeImage} alt="Cerrar" tabindex="0" />
+        </button>
+      </div>
+      <div className={`ruleta ${isSpinning ? 'spinning' : ''}`} style={{
+        backgroundImage: `url(${ruletaImage})`,
+        transform: `rotate(${rotation}deg)`,
+        transition: "transform 6s cubic-bezier(0.2,0.8,0.7,0.99)"
+      }} tabindex="0"
+      alt= "Ruleta de casillas: Contenido, 1, 2, 3, 4, 5 y 6">
+      </div>
+      <div className='resultado-container' style={{ minHeight: '50px' }} tabindex="0">
+        {showResult ? (
+          <button className='resultado-button' onClick={() => onClose(resultado)} tabindex="0">
+            {resultado !== '' && `Avanza ${resultado} casillas`}
+          </button>
+        ) : (
+          <div className='barra-inferior' tabindex="0">
+            <button className='girar' onClick={lanzar} disabled={isSpinning} tabindex="0">
+              {isSpinning ? 'Girando...' : 'Girar'}
             </button>
           </div>
-          <div className={`ruleta ${isSpinning ? 'spinning' : ''}`} style={{
-            backgroundImage: `url(${ruletaImage})`,
-            transform: `rotate(${rotation}deg)`,
-            transition: "transform 6s cubic-bezier(0.2,0.8,0.7,0.99)"
-          }}>
-          </div>
-          <div className='resultado-container' style={{ minHeight: '50px' }}>
-            {showResult ? (
-              <button className='resultado-button' onClick={() => onClose(resultado)}>
-              {resultado !== '' && `Avanza ${resultado} casillas`}
-            </button>
-            ) : (
-              <div className='barra-inferior'>
-                <button className='girar' onClick={lanzar} disabled={isSpinning}>
-                  {isSpinning ? 'Girando...' : 'Girar'}
-                </button>
-              </div>
-            )}
-          </div>
-          <div className='flecha'>
-            <img src={flechaImage} alt='flecha'/>
-          </div>
-        </div>
+        )}
+      </div>
+      <div className='flecha' tabindex="0">
+        <img src={flechaImage} alt='flecha para girar' tabindex="0" />
       </div>
     </div>
+  </div>
+</div>
   );
 };
 

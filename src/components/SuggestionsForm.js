@@ -15,17 +15,18 @@ const SuggestionsForm = () => {
   };
 
   return (
-    <div className="form-container">
-      <h2>Sugerencias o Comentarios</h2>
-      <form onSubmit={handleSubmit}>
-        <textarea
-          value={suggestion}
-          onChange={handleChange}
-          placeholder="Ingrese alguna sugerencia o comentario"
-        />
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+    <div className="form-container" tabindex="0">
+    <h2 tabindex="0">Sugerencias o Comentarios</h2>
+    <form onSubmit={handleSubmit}>
+      <textarea
+        value={suggestion}
+        onChange={handleChange}
+        placeholder="Ingrese alguna sugerencia o comentario"
+        tabindex="0"
+      />
+      <button type="submit" tabindex="0">Enviar</button>
+    </form>
+  </div>
   );
 };
 

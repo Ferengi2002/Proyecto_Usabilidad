@@ -15,18 +15,19 @@ const ErrorReportForm = () => {
   };
 
   return (
-    <div className="form-container" style={{ width: '400px', height: '240px' }}>
-      <p>
-        Si encontró algún error, repórtelo en nuestros canales oficiales o en la caja de texto.
-      </p>
-      <form onSubmit={handleSubmit}>
-        <textarea
-          value={errorReport}
-          onChange={handleChange}
-          placeholder="Coloque el error que encontró"
-        />
-        <button type="submit">Enviar</button>
-      </form>
+    <div className="form-container" style={{ width: '400px', height: '240px' }} >
+    <p tabindex="0">
+      Si encontró algún error, repórtelo en nuestros canales oficiales o en la caja de texto.
+    </p>
+    <form onSubmit={handleSubmit}>
+      <textarea
+        value={errorReport}
+        onChange={handleChange}
+        placeholder="Coloque el error que encontró"
+        tabindex="0"
+      ></textarea>
+      <button type="submit" tabindex="0">Enviar</button>
+    </form>
     </div>
   );
 };

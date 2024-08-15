@@ -4,11 +4,11 @@ import logoImage from '../assets/images/logo.png';
 
 const Header = () => {
   return (
-    <div className="header">
-      <Link to="/">
-        <img src={logoImage} alt="Logo FísicaVentura" className="logo" />
-      </Link>
-    </div>
+    <div className="header" tabindex="0">
+    <Link to="/" tabindex="0">
+      <img src={logoImage} alt="Logo FísicaVentura" className="logo" tabindex="0" />
+    </Link>
+  </div>
   );
 };
 

@@ -31,12 +31,14 @@ const InputName = () => {
         value={localName}
         onChange={handleChange}
         className="input-name"
+        tabindex="0"
       />
       <img
         src={playButtonImage}
-        alt="Play Button"
+        alt="Boton para iniciar juego"
         onClick={handleSubmit}
         className="play-button"
+        tabindex="0"
       />
     </div>
   );

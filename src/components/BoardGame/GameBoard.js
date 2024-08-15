@@ -92,34 +92,37 @@ function GameBoard() {
 
     return (
         <div>
-            <div className="game-board" onClick={handleAvatarClick}>
-                {positions.map((pos, index) => (
-                    <div
-                        key={index}
-                        className={`board-cell ${index === 0 ? 'start-cell' : ''} ${index === positions.length - 1 ? 'end-cell' : ''}`}
-                        style={{
-                            left: `${pos.x}px`,
-                            top: `${pos.y}px`,
-                        }}
-                    >
-                        <span className="cell-number">
-                            {index === 0 ? 'Inicio' : index + 1}
-                        </span>
-                    </div>
-                ))}
-                {positions.length > 0 && currentPosition < positions.length && (
-                    <div
-                        className="avatar"
-                        style={{
-                            left: `${positions[currentPosition].x + 60}px`,
-                            top: `${positions[currentPosition].y + 60}px`,
-                        }}
-                    ></div>
-                )}
+        <div className="game-board" onClick={handleAvatarClick} tabindex="0">
+          {positions.map((pos, index) => (
+            <div
+              key={index}
+              className={`board-cell ${index === 0 ? 'start-cell' : ''} ${index === positions.length - 1 ? 'end-cell' : ''}`}
+              style={{
+                left: `${pos.x}px`,
+                top: `${pos.y}px`,
+              }}
+              tabindex="0"
+            >
+              <span className="cell-number" tabindex="0">
+                {index === 0 ? 'Inicio' : index + 1}
+              </span>
             </div>
-            {showRoulette && <Roulette onClose={handleRouletteClose} />}
-            {showQuestion && <Question onAnswered={handleQuestionAnswered} />}
+          ))}
+          {positions.length > 0 && currentPosition < positions.length && (
+            <div
+              className="avatar"
+              style={{
+                left: `${positions[currentPosition].x + 60}px`,
+                top: `${positions[currentPosition].y + 60}px`,
+              }}
+              tabindex="0"
+            ></div>
+          )}
         </div>
+        {showRoulette && <Roulette onClose={handleRouletteClose} tabindex="0" />}
+        {showQuestion && <Question onAnswered={handleQuestionAnswered} tabindex="0" />}
+      </div>
+      
     );
 }
 

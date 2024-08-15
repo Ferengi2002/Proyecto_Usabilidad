@@ -11,18 +11,18 @@ const Scoreboard = () => {
   ];
 
   return (
-    <div className="scoreboard-container">
+    <div className="scoreboard-container" >
     <div className="scoreboard">
       <table>
         <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Tiempo</th>
+          <tr tabindex="0">
+            <th tabindex="0">Nombre</th>
+            <th tabindex="0">Tiempo</th>
           </tr>
         </thead>
         <tbody>
           {scores.map((score, index) => (
-            <tr key={index}>
+            <tr key={index} tabindex="0">
               <td>{score.name}</td>
               <td>{score.time}</td>
             </tr>

@@ -80,47 +80,56 @@ const Question = ({ onAnswered }) => {
 
   return (
     <div className='modal-overlay'>
-      <div className='modal-content'>
-        <div className="question-container">
-          <div className="question-header">
-            <div className="question-number">Pregunta</div>
-            {question.questionImage && <img src={question.questionImage} alt="Pregunta" className="question-image" />}
-          </div>
-          <div className="question-text">{question.questionText}</div>
-          <div className="options-container">
-            {question.options.map((option, index) => (
-              <div
-                key={index}
-                className="option"
-                onClick={() => handleOptionClick(option)}
-              >
-                {option}
-              </div>
-            ))}
-          </div>
-          <div className="hint">
-            <a href="#hint" onClick={handleFeedbackClick}>¿No sabes la respuesta?</a>
-          </div>
-
-          {/* Modal de respuesta correcta o incorrecta */}
-          {selectedOption && (
-            <div className="answer-modal">
-              <img
-                src={isAnswerCorrect ? correctImage : incorrectImage}
-                alt={isAnswerCorrect ? 'Respuesta Correcta' : 'Respuesta Incorrecta'}
-                className="modal-image"
-              />
-              <div className="ok-button" onClick={handleOkClick}>
-                OK
-              </div>
-            </div>
-          )}
-
-          {/* Componente de retroalimentación */}
-          {showFeedback && <Feedback onClose={handleCloseFeedback} />}
-        </div>
+  <div className='modal-content'>
+    <div className="question-container">
+      <div className="question-header">
+        <div className="question-number" tabindex="0">Pregunta</div>
+        {question.questionImage && (
+          <img
+            src={question.questionImage}
+            alt="Pregunta"
+            className="question-image"
+            tabindex="0"
+          />
+        )}
       </div>
+      <div className="question-text" tabindex="0">{question.questionText}</div>
+      <div className="options-container">
+        {question.options.map((option, index) => (
+          <div
+            key={index}
+            className="option"
+            onClick={() => handleOptionClick(option)}
+            tabindex="0"
+          >
+            {option}
+          </div>
+        ))}
+      </div>
+      <div className="hint" tabindex="0">
+        <a href="#hint" onClick={handleFeedbackClick} tabindex="0">¿No sabes la respuesta?</a>
+      </div>
+
+      {/* Modal de respuesta correcta o incorrecta */}
+      {selectedOption && (
+        <div className="answer-modal" tabindex="0">
+          <img
+            src={isAnswerCorrect ? correctImage : incorrectImage}
+            alt={isAnswerCorrect ? 'Respuesta Correcta' : 'Respuesta Incorrecta'}
+            className="modal-image"
+            tabindex="0"
+          />
+          <div className="ok-button" onClick={handleOkClick} tabindex="0">
+            OK
+          </div>
+        </div>
+      )}
+
+      {/* Componente de retroalimentación */}
+      {showFeedback && <Feedback onClose={handleCloseFeedback} />}
     </div>
+  </div>
+</div>
   );
 };
 
