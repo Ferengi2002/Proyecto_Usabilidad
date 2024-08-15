@@ -2,7 +2,7 @@
   "name": "fisicaventura",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ferengi2002.github.io/",
+  "homepage": "http://ferengi2002.github.io/Proyecto_Usabilidad",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
