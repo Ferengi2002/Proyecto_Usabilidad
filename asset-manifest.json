@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Proyecto_Usabilidad/static/css/main.7e4f2675.css",
+    "main.css": "/Proyecto_Usabilidad/static/css/main.05e44b02.css",
     "main.js": "/Proyecto_Usabilidad/static/js/main.02954435.js",
     "static/js/453.bbdb584e.chunk.js": "/Proyecto_Usabilidad/static/js/453.bbdb584e.chunk.js",
     "static/media/fondo.jpg": "/Proyecto_Usabilidad/static/media/fondo.fc322ab7955c7de87866.jpg",
@@ -18,12 +18,12 @@
     "static/media/personajeInstruciones.png": "/Proyecto_Usabilidad/static/media/personajeInstruciones.a74f3bd9a76f098f399a.png",
     "static/media/flecha.png": "/Proyecto_Usabilidad/static/media/flecha.5398d778c53780b46ea2.png",
     "index.html": "/Proyecto_Usabilidad/index.html",
-    "main.7e4f2675.css.map": "/Proyecto_Usabilidad/static/css/main.7e4f2675.css.map",
+    "main.05e44b02.css.map": "/Proyecto_Usabilidad/static/css/main.05e44b02.css.map",
     "main.02954435.js.map": "/Proyecto_Usabilidad/static/js/main.02954435.js.map",
     "453.bbdb584e.chunk.js.map": "/Proyecto_Usabilidad/static/js/453.bbdb584e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e4f2675.css",
+    "static/css/main.05e44b02.css",
     "static/js/main.02954435.js"
   ]
 }
