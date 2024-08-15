@@ -8,20 +8,26 @@ function parseQuestions(data) {
   const questionsArray = data.split('\n\n').map(questionBlock => {
       const lines = questionBlock.split('\n').filter(line => line.trim() !== '');
       
-      const questionText = lines[0]; // La primera línea es la pregunta
-      
-      const options = lines.slice(1, lines.length - 1).filter(option => !option.startsWith('Respuesta')); // Filtra las líneas que no sean la respuesta
+      // Verifica que el bloque contenga una pregunta válida y al menos 4 líneas (1 pregunta, 3 opciones, 1 respuesta)
+      if (lines.length >= 5) {
+        const questionText = lines[0]; // La primera línea es la pregunta
+        
+        // Recoge las 3 primeras líneas después de la pregunta como opciones
+        const options = lines.slice(1, 5).map(option => option.trim());
 
-      const correctOption = lines[lines.length - 1].replace('Respuesta', '').trim(); // Última línea es la respuesta correcta
+        // La cuarta línea después de las opciones es la respuesta correcta
+        const correctOption = lines[5].replace('Respuesta ', '').trim(); // Reemplaza 'Respuesta' con espacio al inicio
 
-      return {
-          questionText: questionText.trim(),
-          options: options.map(option => option.trim()), // Asegúrate de recortar las opciones
-          correctOption: correctOption.trim()
-      };
+        return {
+            questionText: questionText.trim(),
+            options: options, // Opciones ya recortadas en el map anterior
+            correctOption: correctOption
+        };
+      }
+      return null;
   });
 
-  return questionsArray;
+  return questionsArray.filter(question => question !== null); // Filtra bloques vacíos o inválidos
 }
 
 const Question = ({ onAnswered }) => {
@@ -33,22 +39,24 @@ const Question = ({ onAnswered }) => {
 
   useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/questions.txt`)
-      .then(response => {
-        if (!response.ok) {
+    .then(response => {
+      if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then(text => {
-        const parsedQuestions = parseQuestions(text);
-        const randomQuestion = parsedQuestions[Math.floor(Math.random() * parsedQuestions.length)];
-        setQuestion(randomQuestion);
-      })
-      .catch(error => {
-        console.error('Error cargando el archivo:', error);
-        setError('Error cargando las preguntas. Por favor intenta de nuevo más tarde.');
-      });
-  }, []);
+      }
+      return response.text();
+  })
+  .then(text => {
+      console.log(text); // Agrega esto para verificar el contenido
+      const parsedQuestions = parseQuestions(text);
+      const randomQuestion = parsedQuestions[Math.floor(Math.random() * parsedQuestions.length)];
+      setQuestion(randomQuestion);
+  })
+  .catch(error => {
+      console.error('Error cargando el archivo:', error);
+      setError('Error cargando las preguntas. Por favor intenta de nuevo más tarde.');
+  });
+}, []);
+
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     const correct = option === question.correctOption;
@@ -106,9 +114,6 @@ const Question = ({ onAnswered }) => {
           </div>
         ))}
       </div>
-      <div className="hint" tabindex="0">
-        <a href="#hint" onClick={handleFeedbackClick} tabindex="0">¿No sabes la respuesta?</a>
-      </div>
 
       {/* Modal de respuesta correcta o incorrecta */}
       {selectedOption && (
@@ -124,9 +129,6 @@ const Question = ({ onAnswered }) => {
           </div>
         </div>
       )}
-
-      {/* Componente de retroalimentación */}
-      {showFeedback && <Feedback onClose={handleCloseFeedback} />}
     </div>
   </div>
 </div>
