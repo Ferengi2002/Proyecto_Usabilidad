@@ -1,0 +1,70 @@
+/* Estilos para el marcador */
+.scoreboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin-top: 5px;
+  }
+  
+  .scoreboard {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    max-width: 400px; 
+  }
+  
+  .scoreboard table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .scoreboard th {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 22px; 
+  }
+  
+  .scoreboard td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+  }
+  
+  .scoreboard tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Estilos para el contenedor de entrada */
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 60px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: -35px;
+  }
+  
+  .input-name {
+    width: 30%;
+    padding: 12px;
+    font-size: 1.3em;
+    border-radius: 4px;
+  }
+  
+  .play-button {
+    width: 90px;
+    height: 90px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-image: url('../assets/images/boton.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    flex-shrink: 0; /* Evita que el botón se encoja */
+  }

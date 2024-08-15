@@ -1,0 +1,80 @@
+/*Estilo de instrucciones*/
+.instructions-container {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+  }
+  
+  .instructions-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .instructions-image {
+    width: 110px;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  
+  .instructions-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .instructions-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+  
+  .instructions-content {
+    position: relative;
+  }
+  
+  .instructions-content-container {
+    width: 590px;
+    height: 420px;
+    background-image: url('../assets/images/fondo-instrucciones.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .close-button-content{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+  .instructions-content h2 {
+    color: #000;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .instructions-content ol {
+    padding-left: 60px;
+    padding-right: 30px;
+  }
+  .instructions-content li {
+    margin-bottom: 15px;
+    line-height: 1.0;
+  }
+  .good-luck {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #000;
+  }

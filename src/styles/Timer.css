@@ -1,0 +1,29 @@
+/*Estilo para el tiempo y usuario*/
+
+.container{
+    padding-top: 1px;
+  }
+  .container div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .timer-container{
+    background-color: #fff;
+    width: 30vw;
+    height: 7vh;
+    padding: auto;
+    margin-left: 20px;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+    justify-content: center;
+  }
+  
+  .timer-container h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .text-timer{
+    font-weight: normal;
+  }

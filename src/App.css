@@ -1,0 +1,317 @@
+/* Estilos generales */
+body {
+  background-image: url('./assets/images/fondo.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para la ruleta*/
+.plafon {
+  position: relative;
+  margin: 10px auto;
+  text-align: center;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #EBFDFF;
+  border-radius: 18px;
+}
+
+.ruleta{
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 15px;
+  animation-play-state: paused;
+
+}
+.ruleta.spinning {
+  animation-play-state: running;
+}
+
+.flecha {
+  position: absolute;
+  right: 120px;
+  top: 50%;
+  transform: translateY(-50%); 
+  width: 80px;
+  height: 90px;
+}
+.girar, .resultado-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #D6D278;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  
+}
+
+img{
+  width: 100%;
+}
+
+.barra-inferior{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.resultado-container{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+/*Estilo de boton cerrar*/
+.close-button-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.close-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.close-button img {
+  width: 35px;
+  height: 35px;
+}
+
+/*Estilo para cuando se abra una ventana emergente*/
+.instructions-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/*Estilo para el footer*/
+footer {
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+  display: inline-block;
+}
+
+footer a {
+  margin-left: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/*ESTILOS DE EL COMPONENTE QUESTION*/
+.question-container {
+  background: url('./assets/images/fondo-pregunta.png'); /* Usa la imagen de fondo adecuada */
+  background-size: cover; /* Esto hará que la imagen cubra todo el contenedor */
+  width: 100%; 
+  max-width: 515px;
+  height: 500px; 
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.question-number {
+  margin-left: 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.question-image {
+  width: 150px;
+  height: auto;
+}
+
+.question-text {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #333;
+  text-align: center; /* Asegura que el texto de la pregunta esté centrado */
+}
+
+.options-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Espaciado entre las opciones */
+  width: 100%;
+}
+
+.option {
+  background-color: #a7d8f5; /* Color de fondo de las opciones */
+  width: 100%;
+  max-width: 450px;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1em;
+  color: #333;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #81c2f2; /* Color al pasar el mouse por encima */
+}
+
+.hint {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.hint a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.hint a:hover {
+  text-decoration: underline;
+}
+
+.answer-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0;
+  border-radius: 15px;
+  z-index: 1000;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.modal-image {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+
+.ok-button {
+  position: absolute;
+  bottom: 20px; /* Ajusta este valor para mover el botón hacia arriba o hacia abajo */
+  padding: 10px 20px;
+  background-color: #81c2f2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  left: 50%; /* Centra el botón horizontalmente dentro del contenedor */
+  transform: translateX(-50%);
+}
+
+.ok-button:hover {
+  background-color: #0000ff;
+}
+
+
+/*ESTILOS DE LA PANTALLA FEEDBACK*/
+
+.feedback-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('./assets/images/feedback.png') no-repeat center center; /* Asegúrate de que la ruta sea correcta */
+  background-size: contain;
+  width: 600px; /* Cambia esto al ancho exacto de tu imagen */
+  height: 400px; /* Cambia esto a la altura exacta de tu imagen */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-text {
+  font-size: 1.2em;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  padding: 0 100px; /* Ajusta el padding para centrar el texto */
+  word-wrap: break-word;
+}
+
+.close-icon {
+  position: absolute;
+  top: 35px;
+  right: 55px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
