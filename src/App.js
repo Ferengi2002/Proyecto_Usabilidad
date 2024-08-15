@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { UserNameProvider } from './components/UserName';
 import Header from './components/Header';
 import Scoreboard from './components/Scoreboard';
@@ -8,7 +8,6 @@ import SecondScreen from './components/SecondScreen';
 import Footer from './components/Footer';
 import ErrorReportScreen from './components/ErrorReportScreen';
 import './App.css';
-
 
 function App() {
   return (

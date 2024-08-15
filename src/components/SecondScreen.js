@@ -22,7 +22,10 @@ const SecondScreen = () => {
         // Recibir el resultado de la ruleta, cerrar la ruleta y mover el avatar
         setSteps(result);
         setShowRoulette(false);
-        setShowQuestion(true); // Mostrar la pregunta después de mover el avatar
+                //delay para mostrar la pregunta
+                setTimeout(() => {
+                    setShowQuestion(true);
+                }, 1000);
     };
 
 

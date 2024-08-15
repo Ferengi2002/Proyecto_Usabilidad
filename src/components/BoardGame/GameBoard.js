@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import './GameBoard.css';
-import Roulette from '../Roulette';  // Importa tu componente de la ruleta
-import Question from '../Question';
 
-function GameBoard() {
+function GameBoard({ steps, onClickStart }) {
     const [positions, setPositions] = useState([]);
     const [currentPosition, setCurrentPosition] = useState(0);
-    const [showRoulette, setShowRoulette] = useState(false);
-    const [showQuestion, setShowQuestion] = useState(false);
-    const [pendingMove, setPendingMove] = useState(0);
-    const [isQuestionAnswered, setIsQuestionAnswered] = useState(false);
+    
 
     useEffect(() => {
+        // Calcula las posiciones cuando se monta el componente
         const positions = calculatePositions();
         setPositions(positions);
     }, []);
+
+    useEffect(() => {
+        // Mueve el avatar cuando se actualizan los pasos
+        if (steps !== 0 && positions.length > 0) {
+            moverAvatar(steps);
+        }
+    }, [steps, positions]);
 
     function calculatePositions() {
         let positions = [];
@@ -45,84 +48,45 @@ function GameBoard() {
         return positions;
     }
 
-    function handleAvatarClick() {
-        if (!showRoulette && !showQuestion) {
-            setShowRoulette(true); // Muestra la ruleta
+    function moverAvatar(steps) {
+        let newPosition = (currentPosition + steps) % positions.length;
+        setCurrentPosition(newPosition); // Actualiza la posición actual del avatar
+    }
+
+    function handleClick() {
+        if (currentPosition === 0) {
+            onClickStart();
         }
     }
-
-    function handleRouletteClose(result) {
-        setShowRoulette(false);
-        setPendingMove(result); // Establece cuántas casillas mover
-        setShowQuestion(true); // Muestra la pregunta
-    }
-
-    function moveAvatar(steps) {
-        setCurrentPosition((prev) => {
-            let newPosition = prev + steps;
-            if (newPosition >= positions.length) {
-                newPosition = positions.length - 1; // Asegura que no pase el límite del tablero
-            } else if (newPosition < 0) {
-                newPosition = 0; // Asegura que no retroceda más allá del inicio
-            }
-            return newPosition;
-        });
-    }
-
-    function handleQuestionAnswered(isCorrect) {
-        setShowQuestion(false);
-        if (isCorrect) {
-            moveAvatar(pendingMove); // Mueve el avatar hacia adelante si es correcto
-        } else {
-            moveAvatar(-pendingMove); // Retrocede el avatar si la respuesta es incorrecta
-        }
-        setIsQuestionAnswered(true);
-    }
-
-    function handleNextRound() {
-        setPendingMove(0);
-        setIsQuestionAnswered(false);
-    }
-
-    useEffect(() => {
-        if (isQuestionAnswered) {
-            handleNextRound(); // Prepara para la siguiente ronda
-        }
-    }, [isQuestionAnswered]);
 
     return (
         <div>
-        <div className="game-board" onClick={handleAvatarClick} tabindex="0">
-          {positions.map((pos, index) => (
-            <div
-              key={index}
-              className={`board-cell ${index === 0 ? 'start-cell' : ''} ${index === positions.length - 1 ? 'end-cell' : ''}`}
-              style={{
-                left: `${pos.x}px`,
-                top: `${pos.y}px`,
-              }}
-              tabindex="0"
-            >
-              <span className="cell-number" tabindex="0">
-                {index === 0 ? 'Inicio' : index + 1}
-              </span>
+            <div className="game-board" onClick={handleClick}>
+                {positions.map((pos, index) => (
+                    <div
+                    key={index}
+                    className={`board-cell ${index === 0 ? 'start-cell' : ''} ${index === positions.length - 1 ? 'end-cell' : ''}`}
+                    style={{
+                        left: `${pos.x}px`,
+                        top: `${pos.y}px`,
+                    }}
+                    >
+                        <span className="cell-number">
+                            {index === 0 ? 'Inicio' : index + 1}
+                        </span>
+                    </div>
+                ))}
+                {positions.length > 0 && (
+                    <div
+                        className="avatar"
+                        style={{
+                            left: `${positions[currentPosition].x+60}px`,
+                            top: `${positions[currentPosition].y+60}px`,
+                        }}
+                    ></div>
+                )}
             </div>
-          ))}
-          {positions.length > 0 && currentPosition < positions.length && (
-            <div
-              className="avatar"
-              style={{
-                left: `${positions[currentPosition].x + 60}px`,
-                top: `${positions[currentPosition].y + 60}px`,
-              }}
-              tabindex="0"
-            ></div>
-          )}
         </div>
-        {showRoulette && <Roulette onClose={handleRouletteClose} tabindex="0" />}
-        {showQuestion && <Question onAnswered={handleQuestionAnswered} tabindex="0" />}
-      </div>
-      
     );
 }
 
